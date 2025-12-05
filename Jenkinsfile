@@ -58,10 +58,10 @@
 pipeline {
     agent any
 
-    triggers {
-        cron('*/2 * * * *')   // Runs every 2 minutes
-        // For 4 AM every weekday, use: cron('0 4 * * 1-5')
-    }
+    // triggers {
+    //     cron('*/2 * * * *')   // Runs every 2 minutes
+    //     // For 4 AM every weekday, use: cron('0 4 * * 1-5')
+    // }
 
     stages {
         stage('Checkout Code') {
