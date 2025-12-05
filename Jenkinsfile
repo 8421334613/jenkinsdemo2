@@ -55,12 +55,13 @@
 
 
 // use triggered
-
 pipeline {
     agent any
 
-    triggered {
-        cron('*/2 * * * *') // every weekday at 4 AM
+    triggers {
+        cron('*/2 * * * *')   // Runs every 2 minutes
+        // For 4 AM every weekday, use: cron('0 4 * * 1-5')
+    }
 
     stages {
         stage('Checkout Code') {
@@ -81,7 +82,6 @@ pipeline {
         success {
             echo 'Pipeline completed successfully!'
         }
-
         failure {
             echo 'Pipeline failed!'
         }
